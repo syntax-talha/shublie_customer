@@ -1,0 +1,57 @@
+name: shublie_customer
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Uncomment this line if you need it
+  # font_awesome_flutter: ^10.1.0
+  image_picker: ^0.8.4+8
+  path_provider: ^2.0.7
+  cupertino_icons: ^1.0.6
+  flutter_splash_screen: ^3.0.0
+  google_maps_flutter: ^2.6.1
+  flutter_rating_bar: ^4.0.1
+  country_picker: ^2.0.26
+  intl_phone_field: ^3.2.0
+  desktop_window: ^0.4.0
+  motion_tab_bar: ^2.0.4
+  location: ^6.0.2
+  geolocator: ^12.0.0
+  http: ^1.2.2
+  toastification: ^2.3.0
+  intl: ^0.19.0
+  socket_io_client: ^2.0.3+1
+  flutter_local_notifications: ^13.0.0
+  shared_preferences: ^2.2.3
+  file_selector: ^1.0.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png
+    - assets/onboarding1.jpg
+    - assets/onboarding2.jpg
+    - assets/onboarding3.jpg
+    - assets/icons/
+    - assets/flag/
+    - assets/images/
+    - assets/background/
+    - assets/services/
+    - assets/lottie/
+    # - lib/ # Uncomment if you have assets in lib folder
+    # - lib/utils/ # Uncomment if you have assets in lib/utils folder
