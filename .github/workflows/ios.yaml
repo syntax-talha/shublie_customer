@@ -1,0 +1,43 @@
+name: Build iOS
+
+on:
+  push:
+    branches:
+      - main # Change to your main branch
+  pull_request:
+    branches:
+      - main # Change to your main branch
+
+jobs:
+  build:
+    runs-on: macos-latest # Use the latest macOS runner
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    - name: Install Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.3.10' # Replace with your Flutter version
+
+    - name: Install dependencies
+      run: flutter pub get
+
+    - name: Build iOS app
+      run: |
+        cd ios
+        pod install
+        cd ..
+        flutter build ios --release
+
+    - name: Upload iOS build artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: iOS-build
+        path: build/ios/iphoneos/*.ipa # Adjust this path based on your build output
