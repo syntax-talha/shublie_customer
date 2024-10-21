@@ -24,18 +24,21 @@ jobs:
         with:
           flutter-version: '3.13.0'  # Set to your Flutter version (which includes Dart 3.3.3+)
 
-      # Install CocoaPods (required for iOS dependencies)
-      - name: Install CocoaPods
-        run: |
-          sudo gem install cocoapods
-          cd ios
-          pod install
-
       # Install Flutter dependencies
       - name: Install dependencies
         run: flutter pub get
 
-      # Build the iOS app
+      # Build the iOS app (this step generates the iOS project files including Podfile)
+      - name: Build iOS dependencies
+        run: flutter build ios --no-codesign
+
+      # Install CocoaPods (required for iOS dependencies)
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install
+
+      # Build the iOS app for release
       - name: Build iOS release
         run: flutter build ios --release --no-codesign
 
