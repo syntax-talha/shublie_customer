@@ -30,7 +30,6 @@ jobs:
           sudo gem install cocoapods
           cd ios
           pod install
-        working-directory: ./ios
 
       # Install Flutter dependencies
       - name: Install dependencies
@@ -42,4 +41,7 @@ jobs:
 
       # Upload the build artifacts
       - name: Upload iOS artifacts
-        uses: ac
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-build
+          path: build/ios/iphoneos/*.app
