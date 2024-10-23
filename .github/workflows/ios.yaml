@@ -25,7 +25,7 @@ jobs:
           flutter-version: '3.24.3'  # Set to your Flutter version (which includes Dart 3.3.3+)
 
       # Install Flutter dependencies
-      - name: Install dependenciess
+      - name: Install dependencies
         run: flutter pub get
 
       # Build the iOS app (this step generates the iOS project files including Podfile)
