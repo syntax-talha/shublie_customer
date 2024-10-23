@@ -6,7 +6,7 @@ platform :ios, '11.0'
 # ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 # Set the correct path to your Flutter SDK
-flutter_application_path = 'C:/src/flutter'
+flutter_application_path = File.expand_path('C:/src/flutter', __dir__)
 load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
 
 target 'Runner' do
