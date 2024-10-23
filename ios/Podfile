@@ -6,8 +6,13 @@ platform :ios, '11.0'
 # ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 # Set the correct path to your Flutter SDK
-flutter_application_path = File.expand_path('C:/src/flutter', __dir__)
-load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+if RUBY_PLATFORM =~ /darwin/
+  flutter_application_path = File.expand_path('C:/src/flutter', __dir__)
+else
+  flutter_application_path = 'C:/src/flutter'
+end
+
+load File.join(flutter_application_path, 'flutter_tools', 'bin', 'podhelper.rb')
 
 target 'Runner' do
   # Comment the next line if you don't want to use dynamic frameworks
